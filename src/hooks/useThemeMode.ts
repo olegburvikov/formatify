@@ -1,36 +1,40 @@
 import { useEffect, useState } from "react";
 import { ThemeType } from "../types.ts";
 
+const getMatchMediaDarkScheme = () =>
+  window.matchMedia("(prefers-color-scheme: dark)");
+
+const getUserSystemTheme = (): ThemeType => {
+  if (getMatchMediaDarkScheme().matches) return ThemeType.Dark;
+
+  return ThemeType.Light;
+};
+
 const useThemeMode = () => {
-  const [mode, setMode] = useState(ThemeType.Light);
-
-  const onSelectMode = (mode: ThemeType) => {
-    setMode(mode);
-
-    if (mode === ThemeType.Dark) document.body.classList.add("dark-mode");
-    else document.body.classList.remove("dark-mode");
-  };
+  const [mode, setMode] = useState(getUserSystemTheme());
 
   useEffect(() => {
-    // Add listener to update styles
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) =>
-        onSelectMode(e.matches ? ThemeType.Dark : ThemeType.Light),
-      );
+    if (mode === ThemeType.Dark) {
+      document.body.classList.add("dark-mode");
+      return;
+    }
 
-    // Setup dark/light mode for the first time
-    onSelectMode(
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? ThemeType.Dark
-        : ThemeType.Light,
-    );
+    document.body.classList.remove("dark-mode");
+  }, [mode]);
+
+  useEffect(() => {
+    const matchMediaDark = getMatchMediaDarkScheme();
+
+    const listener = (e: MediaQueryListEvent) => {
+      return setMode(e.matches ? ThemeType.Dark : ThemeType.Light);
+    };
+
+    // Add listener to update styles
+    matchMediaDark.addEventListener("change", listener);
 
     // Remove listener
     return () => {
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", () => {});
+      matchMediaDark.removeEventListener("change", listener);
     };
   }, []);
 
