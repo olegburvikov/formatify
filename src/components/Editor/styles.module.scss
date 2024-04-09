@@ -1,0 +1,22 @@
+.wrapper {
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.header {
+  padding: 6px 0;
+  background: #31363F;
+  display: flex;
+  justify-content: center;
+}
+
+.getStartedButton {
+  color: var(--text-color);
+  background: var(--background-main);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.main {}
