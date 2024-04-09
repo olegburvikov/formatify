@@ -14,12 +14,15 @@ const useThemeMode = () => {
   const [mode, setMode] = useState(getUserSystemTheme());
 
   useEffect(() => {
+    const body = document.body;
+
     if (mode === ThemeType.Dark) {
-      document.body.classList.add("dark-mode");
+      body.setAttribute("data-theme", "dark-mode");
+
       return;
     }
 
-    document.body.classList.remove("dark-mode");
+    body.setAttribute("data-theme", "light-mode");
   }, [mode]);
 
   useEffect(() => {

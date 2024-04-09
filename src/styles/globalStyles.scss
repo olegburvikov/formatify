@@ -9,12 +9,17 @@
   --text-color: #3f3f3f;
 }
 
+body[data-theme="dark-mode"] {
+  --background-color: #3f3f3f;
+  --text-color: #ffffff;
+}
+
+body[data-theme="light-mode"] {
+  --background-color: #fefefe;
+  --text-color: #3f3f3f;
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-
-  &.dark-mode {
-    --background-color: #3f3f3f;
-    --text-color: #ffffff
-  }
 }
