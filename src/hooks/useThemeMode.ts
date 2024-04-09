@@ -32,10 +32,8 @@ const useThemeMode = () => {
       return setMode(e.matches ? ThemeType.Dark : ThemeType.Light);
     };
 
-    // Add listener to update styles
     matchMediaDark.addEventListener("change", listener);
 
-    // Remove listener
     return () => {
       matchMediaDark.removeEventListener("change", listener);
     };
