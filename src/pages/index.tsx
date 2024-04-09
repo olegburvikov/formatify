@@ -1,10 +1,8 @@
-import {FC} from 'react';
+import { FC } from "react";
+import useThemeMode from "../hooks/useThemeMode.ts";
 
+export const App: FC = () => {
+  useThemeMode();
 
-export const App:FC = () => {
- return (
-  <div>
-    App
-  </div>
- );
+  return <div>App</div>;
 };

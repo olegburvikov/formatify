@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {App} from './pages'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./pages";
+import "./styles/globalStyles.scss";
 
-const root = document.getElementById('root')!;
+const root = document.getElementById("root")!;
 
 const StrictApp = (
   <React.StrictMode>
