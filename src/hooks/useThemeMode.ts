@@ -17,12 +17,12 @@ const useThemeMode = () => {
     const body = document.body;
 
     if (mode === ThemeType.Dark) {
-      body.setAttribute("data-theme", "dark-mode");
+      body.setAttribute("data-theme", "dark");
 
       return;
     }
 
-    body.setAttribute("data-theme", "light-mode");
+    body.setAttribute("data-theme", "light");
   }, [mode]);
 
   useEffect(() => {
