@@ -6,6 +6,21 @@ export const Header: FC = () => {
   return (
     <div className={styles.wrapper}>
       <AppLogo />
+
+      <nav className={styles.navigation}>
+        <ul>
+          <li>
+            <a className={styles.externalLink} href="#">
+              Donate
+            </a>
+          </li>
+          <li>
+            <a className={styles.externalLink} href="#">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

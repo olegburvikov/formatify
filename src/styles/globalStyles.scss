@@ -6,17 +6,17 @@
 
 
 body[data-theme="dark"] {
-  --background-main: #222831;
-  --background-secondary: #31363F;
+  --background-main: #1a1b21;
+  --background-secondary: #32353c;
   --accent-color: #76ABAE;
-  --text-color: #FFF2E1;
+  --text-color: #EBECf0;
 }
 
 body[data-theme="light"] {
-  --background-main: #A79277;
-  --background-secondary: #D1BB9E;
+  --background-main: #EBECf0;
+  --background-secondary: #cdced5;
   --accent-color: #76ABAE;
-  --text-color: #FFF2E1;
+  --text-color: #32353c;
 }
 
 body {
@@ -29,4 +29,9 @@ body {
 button {
   border: none;
   cursor: pointer;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }

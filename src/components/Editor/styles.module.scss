@@ -3,6 +3,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  height: 100%;
 }
 
 .header {
@@ -19,4 +20,7 @@
   border-radius: 4px;
 }
 
-.main {}
+.main {
+  background: var(--background-main);
+  height: 100%;
+}
